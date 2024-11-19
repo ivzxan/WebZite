@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="gallery.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="gallery.js" defer></script>
+  <title>Arts Gallery</title>
+</head>
+<body>
+  <header class="header">
+    <h1>ARTS GALLERY</h1>
+  </header>
+  <div class="container">
+    <div class="image-container">
+      <div class="image"><img src="https://assets.onecompiler.app/42xt75xfs/42xt8s2sv/Nice.jfif" alt="Image 1" /></div>
+      <div class="image"><img src="https://assets.onecompiler.app/42xt75xfs/42xtau9vt/NNI.jfif" alt="Image 2" /></div>
+      <div class="image"><img src="Images/Andrhea Moyano.png" alt="Moyano" /></div>
+      <div class="image"><img src="image/4.jpg" alt="Image 4" /></div>
+      <div class="image"><img src="image/5.jpg" alt="Image 5" /></div>
+      <div class="image"><img src="image/6.jpg" alt="Image 6" /></div>
+      <div class="image"><img src="image/7.jpg" alt="Image 7" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 8" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 9" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 10" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 11" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 12" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 13" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 14" /></div>
+      <div class="image"><img src="image/8.jpg" alt="Image 15" /></div>
+    </div>
+
+    <div class="popup-image">
+      <span>&times;</span>
+      <img src="https://assets.onecompiler.app/42xt75xfs/42xt8s2sv/goku.jfif" alt="Popup Image" />
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".image img").forEach(image => {
+      image.onclick = () => {
+        document.querySelector(".header").style.display = "none";
+        document.querySelector(".popup-image").style.display = "block";
+        document.querySelector(".popup-image img").src = image.getAttribute("src");
+      };
+    });
+
+    document.querySelector(".popup-image span").onclick = () => {
+      document.querySelector(".header").style.display = "block";
+      document.querySelector(".popup-image").style.display = "none";
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const imageName = urlParams.get('image');
+    const imageToSelect = document.querySelector(`.image img[alt='${imageName}']`);
+    if (imageToSelect) {
+      imageToSelect.click();
+    }
+  </script>
+</body>
+</html>
