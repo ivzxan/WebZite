@@ -6,12 +6,72 @@
   <link rel="stylesheet" href="gallery.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="gallery.js" defer></script>
+  <script src="search.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <title>Arts Gallery</title>
 </head>
 <body>
-  <header class="header">
-    <h1>ARTS GALLERY</h1>
-  </header>
+      <div class="header">
+        <div class="logo">
+            <ul>
+                <li><img src="Images/logo.jpg" alt="logo"></li>
+            </ul>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <a href="home.html">
+                        <span class="icon">
+                            <ion-icon name="home"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="artist.html">
+                        <span class="icon">
+                            <ion-icon name="brush"></ion-icon>
+                        </span>
+                        <span class="text">Artist</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="gallery.html">
+                        <span class="icon">
+                            <ion-icon name="image"></ion-icon>
+                        </span>
+                        <span class="text">Gallery</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="game-controller"></ion-icon>
+                        </span>
+                        <span class="text">Game</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="alert-circle"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+        <div class="searchInput">
+            <input type="text" placeholder="Search....">
+            <div class="resultBox">
+            </div>
+            <div class="icon"><ion-icon name="search-sharp"></ion-icon></div>
+        </div>
+    </div>
+    </ul>
+</div>
   <div class="container">
     <div class="image-container">
       <div class="image"><img src="https://assets.onecompiler.app/42xt75xfs/42xt8s2sv/Nice.jfif" alt="Image 1" /></div>
