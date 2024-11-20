@@ -9,6 +9,7 @@ body{
     display: flex;
     justify-content: left;
     align-items: center;
+    max-width: 100%;
     min-height: 15vh;
     margin-left: 30px;
     background-color: #024CAA;
@@ -18,6 +19,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-height: 90px;
     padding: 10px 30px;
     padding-bottom: 30px;
     background-color: #024CAA;
@@ -67,7 +69,7 @@ body{
     flex-direction: column;
     color: #DBD3D3;
     text-align: center;
-    top: 20%;
+    top: 10px;
 }
 .navigation ul li a .icon {
     line-height: 75px;
@@ -100,7 +102,7 @@ body{
     height: 70px;
     border-radius: 10px;
     transition: 0.5s;
-    top: 5px;
+    top: 3px;
 }
 .navigation ul li:nth-child(1).active ~ .indicator {
     background: #091057;
@@ -132,13 +134,13 @@ body{
     position: relative;
     width: 300px;
     z-index: 10;
-    right: -40px;
+    left: 625px;
 }
 .searchInput input {
     height: 50px;
     width: 70%;
     border-radius: 5px;
-    padding: 0 60px 0 20px;
+    padding: 0 60px 0 20px; to 
     font-size: 18px;
     outline: none;
     border: none;
@@ -206,4 +208,3 @@ footer {
     max-width: 450px;
     margin: 150px auto;
 }
-
