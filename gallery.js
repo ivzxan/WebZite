@@ -6,3 +6,12 @@ window.addEventListener('scroll', function () {
         header.classList.remove('active');
     }
 });
+
+let list = document.querySelectorAll('.list');
+    function setActiveClass(){
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active');
+    }
+    list.forEach((item) =>
+    item.addEventListener('click', setActiveClass));
