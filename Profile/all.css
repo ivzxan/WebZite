@@ -1,0 +1,144 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #D0E6FF;
+  overflow: hidden;
+}
+
+.profile-box {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 500px;
+  height: 600px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.profile-box::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ddd;
+  margin: 0 auto;
+}
+
+.name {
+  font-size: 2em;
+  color: #333;
+  margin: 20px 0;
+}
+
+.profile-section {
+  margin-top: 20px;
+}
+
+.section-heading {
+  font-size: 1.3em;
+  color: #222;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.section-detail {
+  font-size: 1em;
+  color: #666;
+  margin: 5px 0;
+}
+
+ul {
+  padding: 0;
+  margin: 10px 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+ul li {
+  text-align: center;
+  font-size: 0.95em;
+  color: #555;
+  margin: 5px 0;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.profile-box {
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-box {
+    width: 90%;
+    height: auto;
+  }
+
+  .name {
+    font-size: 1.6em;
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .section-heading {
+    font-size: 1.2em;
+  }
+
+  .section-detail {
+    font-size: 0.95em;
+  }
+}
+
+.back-button {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #024CAA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    left: 30px;
+    top: 40px;
+}
+
+.back-button .icon {
+    margin-right: 8px;
+    font-size: 30px;
+    margin-top: 7px;;
+}
+
+.back-button:hover {
+    background-color: #033A8C;
+}
