@@ -1,12 +1,3 @@
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.classList.add('active');
-    } else {
-        header.classList.remove('active');
-    }
-});
-
 let list = document.querySelectorAll('.list');
     function setActiveClass(){
         list.forEach((item) =>
@@ -15,3 +6,21 @@ let list = document.querySelectorAll('.list');
     }
     list.forEach((item) =>
     item.addEventListener('click', setActiveClass));
+    
+
+function filterImages() {
+  const searchInput = document.querySelector('.searchInput input').value.toLowerCase();
+  const images = document.querySelectorAll('.image');
+
+  images.forEach(image => {
+    const artStyles = image.getAttribute('data-styles').toLowerCase();
+
+    if (artStyles.includes(searchInput)) {
+      image.style.display = 'block'; 
+    } else {
+      image.style.display = 'none';
+    }
+  });
+}
+
+document.querySelector('.searchInput input').addEventListener('input', filterImages);

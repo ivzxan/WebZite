@@ -1,14 +1,22 @@
 const suggestions = {
-    "Artist 1": "artist1.html",
-    "Artist 2": "artist2.html",
-    "Artist 3": "artist3.html",
-    "Artist 4": "artist4.html",
-    "Artist 5": "artist5.html",
-    "Artist 6": "artist6.html",
-    "Artist 7": "artist7.html",
-    "Artist 8": "artist8.html",
-    "Artist 9": "artist9.html",
-    "Artist 10": "artist10.html",
+    "Andrhea Moyano": "Profile/Anchan.html",
+"Bon Joriz Mahayhay": "Profile/Bon.html",
+"Borromeo Princess Alejandra": "Profile/Borromeo.html",
+"Buns": "Profile/Buns.html",
+"Carlos Angelo Magpantay / un.jello": "Profile/Carlos.html",
+"Ma. Chrisha Niña T. Lubina / Ninnyaa": "Profile/Chrisha.html",
+"Deirdz Rey / Yera chan": "Profile/Deirdz.html",
+"Carlos Miguel Yamio": "Profile/Eroxz.html",
+"Hanna Mae Nuena Cardeno": "Profile/Hanna.html",
+"John Ryan Bentulan": "Profile/John.html",
+"Kanela Seguros": "Profile/Kanela.html",
+"Leon Miguel Emano": "Profile/Leon.html",
+"Michele Ann Red": "Profile/Red.html",
+"Rio": "Profile/Rio.html",
+"Rohan Van E. Co": "Profile/Rohan.html",
+"Rosario, Lyckel Sean P. / Syno": "Profile/Rosario.html",
+"Sanneho": "Profile/Sanneho.html",
+"Dave Marfil/Vivid": "Profile/Vivid.html",
 };
 
 const searchInput = document.querySelector(".searchInput");
@@ -42,7 +50,7 @@ input.onkeyup = (e) => {
 function showSuggestions(list) {
     let listData;
     if (!list.length) {
-        listData = `<li>No results found</li>`;
+        listData = ``;
     } else {
         listData = list.join('');
     }
@@ -58,4 +66,36 @@ function select(element) {
         alert("No URL found for this selection");
     }
     searchInput.classList.remove("active");
+}
+
+
+function filterImages() {
+  const searchInput = document.querySelector('.searchInput input').value.toLowerCase();
+  const images = document.querySelectorAll('.image');
+
+  images.forEach(image => {
+    const artStyles = image.getAttribute('data-styles').toLowerCase();
+
+    if (artStyles.includes(searchInput)) {
+      image.style.display = 'block'; 
+    } else {
+      image.style.display = 'none';  
+    }
+  });
+}
+
+document.querySelector('.searchInput input').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    const searchInput = this.value;
+    localStorage.setItem('searchQuery', searchInput); // 
+    window.location.href = 'gallery.html'; 
+  }
+});
+
+if (window.location.pathname.includes('gallery.html')) {
+  window.addEventListener('load', () => {
+    const searchQuery = localStorage.getItem('searchQuery') || '';
+    document.querySelector('.searchInput input').value = searchQuery; 
+    filterImages(); 
+  });
 }

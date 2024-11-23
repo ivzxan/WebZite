@@ -4,11 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+    background-color: #D0E6FF;
+}
+
 .container {
-  position: relative;
+  position: absolute;
   min-height: 100vh;
-  background: white;
   top: 100px;
+  padding-bottom: 100px;
 }
 
 .container h1 {
@@ -26,7 +30,7 @@
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
-  padding: 10px;
+  padding: 10px;  
 }
 
 .container .image-container .image {
@@ -36,13 +40,27 @@
   box-shadow: 0 5px 15px black;
   overflow: hidden;
   cursor: pointer;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+        }
+      @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        
 }
+
 
 .container .image-container .image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: 0.2s linear;
+  transition: 0.2s linear;        
 }
 
 .container .image-container .image:hover img {
@@ -87,10 +105,6 @@
     width: 95%;
   }
 
-  .header {
-    display: block;
-  }
-
   .container .image-container .image {
     height: 200px;
     width: 300px;
@@ -132,9 +146,34 @@
   }
 }
 
+@media screen and (min-width: 1920px) {
+    .header {
+        padding: 20px 50px;
+    }
+    
+    .navigation {
+        position: absolute;
+        left: -28%;
+        
+    }
+
+    .navigation ul {
+        gap: 40px;
+    }
+
+    .navigation ul li {
+        width: 80px;
+        height: 80px;
+    }
+
+    .searchInput {
+        width: 350px;
+    }
+}
 
 .header {
     position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -144,6 +183,7 @@
     padding-bottom: 30px;
     background-color: #024CAA;
     z-index: 10;
+    transition: visibility 1s, opacity 1s ease-in-out;
 }
 
 .logo ul {
@@ -171,7 +211,7 @@
     position: relative;
     width: 350px;
     height: 70px;
-    right: 248px;    
+    right: 248px;  
 }
 .navigation ul {
     display: flex;
@@ -265,7 +305,7 @@
     height: 50px;
     width: 70%;
     border-radius: 5px;
-    padding: 0 60px 0 20px; to 
+    padding: 0 60px 0 20px;
     font-size: 18px;
     outline: none;
     border: none;
@@ -306,11 +346,27 @@
     text-align: center;
     line-height: 55px;
     font-size: 40px;
-    color: black;
+    color: #FFAA50;
     cursor: pointer;
 }
 
 ::selection {
     color: #fff;
     background: #664AFF;
-        }
+}
+
+footer {
+    background-color: #D0E6FF;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    min-width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+}
+    
+

@@ -80,83 +80,77 @@
     <p>All rights reserved @2024</p>
   </footer>
 <script>
-   
     const artworks = [
-        { url: 'image1.jpg', name: 'Artist 1', page: 'artwork1.html' },
-        { url: 'image2.jpg', name: 'Artist 2', page: 'artwork2.html' },
-        { url: 'image3.jpg', name: 'Artist 3', page: 'artwork3.html' },
-        { url: 'image4.jpg', name: 'Artist 4', page: 'artwork4.html' },
-        { url: 'image5.jpg', name: 'Artist 5', page: 'artwork5.html' },
-        { url: 'image6.jpg', name: 'Artist 6', page: 'artwork6.html' },
-        { url: 'image7.jpg', name: 'Artist 7', page: 'artwork7.html' },
-        { url: 'image8.jpg', name: 'Artist 8', page: 'artwork8.html' },
-        { url: 'image9.jpg', name: 'Artist 9', page: 'artwork9.html' },
-        { url: 'image10.jpg', name: 'Artist 10', page: 'artwork10.html' },
-        { url: 'image11.jpg', name: 'Artist 11', page: 'artwork11.html' },
-        { url: 'image12.jpg', name: 'Artist 12', page: 'artwork12.html' },
-        { url: 'image13.jpg', name: 'Artist 13', page: 'artwork13.html' },
-        { url: 'image14.jpg', name: 'Artist 14', page: 'artwork14.html' },
-        { url: 'image15.jpg', name: 'Artist 15', page: 'artwork15.html' },
-        { url: 'image16.jpg', name: 'Artist 16', page: 'artwork16.html' },
-        { url: 'image17.jpg', name: 'Artist 17', page: 'artwork17.html' },
-        { url: 'image18.jpg', name: 'Artist 18', page: 'artwork18.html' },
-        { url: 'image19.jpg', name: 'Artist 19', page: 'artwork19.html' },
-        { url: 'image20.jpg', name: 'Artist 20', page: 'artwork20.html' }
+    { url: 'Profimages/Anchan.png', name: 'Andrhea Moyano', page: 'Profile/Anchan.html' },
+{ url: 'Profimages/bon.jpg', name: 'Bon Joriz Mahayhay', page: 'Profile/Bon.html' },
+{ url: 'Profimages/borromeo.png', name: 'Borromeo Princess Alejandra', page: 'Profile/Borromeo.html' },
+{ url: 'Profimages/buns.jpeg', name: 'Buns', page: 'Profile/Buns.html' },
+{ url: 'Profimages/carlos.jpg', name: 'Carlos Angelo Magpantay / un.jello', page: 'Profile/Carlos.html' },
+{ url: 'Profimages/chrisha.jpg', name: 'Ma. Chrisha Niña T. Lubina / Ninnyaa', page: 'Profile/Chrisha.html' },
+{ url: 'Profimages/deirdz.jpg', name: 'Deirdz Rey / Yera chan', page: 'Profile/Deirdz.html' },
+{ url: 'Profimages/eroxz.jpg', name: 'Carlos Miguel Yamio', page: 'Profile/Eroxz.html' },
+{ url: 'Profimages/hanna.png', name: 'Hanna Mae Nuena Cardeño', page: 'Profile/Hanna.html' },
+{ url: 'Profimages/john.jpg', name: 'John Ryan Bentulan', page: 'Profile/John.html' },
+{ url: 'Profimages/kanela.jpg', name: 'Kanela Seguros', page: 'Profile/Kanela.html' },
+{ url: 'Profimages/leon.jpg', name: 'Leon Miguel Emano', page: 'Profile/Leon.html' },
+{ url: 'Profimages/red.jpg', name: 'Michele Ann Red', page: 'Profile/Red.html' },
+{ url: 'Profimages/rio.JPG', name: 'Rio', page: 'Profile/Rio.html' },
+{ url: 'Profimages/rohan.jpg', name: 'Rohan Van E. Co', page: 'Profile/Rohan.html' },
+{ url: 'Profimages/rosario.jpg', name: 'Rosario, Lyckel Sean P. / Syno', page: 'Profile/Rosario.html' },
+{ url: 'Profimages/sanneho.jpg', name: 'Sanneho', page: 'Profile/Sanneho.html' },
+{ url: 'Profimages/vivid.jpg', name: 'Dave Marfil/Vivid', page: 'Profile/Vivid.html' },     
     ];
 
-    let currentPage = 0;
+    let currentPage = parseInt(sessionStorage.getItem('currentPage')) || 0;
     const imagesPerPage = 6;
-
+    
     function displayImages() {
-        const gallery = document.getElementById('gallery');
-        gallery.innerHTML = '';
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
 
-        const start = currentPage * imagesPerPage;
-        const end = Math.min(start + imagesPerPage, artworks.length);
+    const start = currentPage * imagesPerPage;
+    const end = Math.min(start + imagesPerPage, artworks.length);
 
-        for (let i = start; i < end; i++) {
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-           
-            const img = document.createElement('div');
-            img.className = 'gallery-image';
-            img.style.backgroundImage = 'url(${artworks[i].url})';
-            img.onclick = () => window.location.href = artworks[i].page;
+    for (let i = start; i < end; i++) {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
 
-            
-            const name = document.createElement('div');
-            name.className = 'gallery-name';
-            name.textContent = artworks[i].name;
+        const img = document.createElement('div');
+        img.className = 'gallery-image';
+        img.style.backgroundImage = `url(${artworks[i].url})`;
+        img.onclick = () => {
+            sessionStorage.setItem('currentPage', currentPage);
+            window.location.href = artworks[i].page;
+        };
 
-            item.appendChild(img);
-            item.appendChild(name);
+        const name = document.createElement('div');
+        name.className = 'gallery-name';
+        name.textContent = artworks[i].name;
 
-            gallery.appendChild(item);
-        }
+        item.appendChild(img);
+        item.appendChild(name);
+
+        gallery.appendChild(item);
     }
-    function showPrevious() {
-        if (currentPage > 0) {
-            currentPage--;
-            displayImages();
-        }
+}
+
+function showPrevious() {
+    if (currentPage > 0) {
+        currentPage--;
+        sessionStorage.setItem('currentPage', currentPage);
+        displayImages();
     }
-    function showNext() {
-        if ((currentPage + 1) * imagesPerPage < artworks.length) {
-            currentPage++;
-            displayImages();
-        }
+}
+
+function showNext() {
+    if ((currentPage + 1) * imagesPerPage < artworks.length) {
+        currentPage++;
+        sessionStorage.setItem('currentPage', currentPage);
+        displayImages();
     }
-    displayImages();
-</script>
-<script>
-    let list = document.querySelectorAll('.list');
-    function setActiveClass(){
-        list.forEach((item) =>
-        item.classList.remove('active'));
-        this.classList.add('active')
-    }
-    list.forEach((item) =>
-    item.addEventListener('click' , setActiveClass));
+}
+
+displayImages();
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

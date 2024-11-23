@@ -5,6 +5,15 @@
     font-family: '';
 }
 
+.intro {
+    color: white;
+    position: absolute;
+    left: 70px;
+    top: 200px;
+    font-size: 30px;
+    justify-content: center;
+}
+
 body{
     display: flex;
     justify-content: left;
@@ -13,6 +22,7 @@ body{
     min-height: 15vh;
     margin-left: 30px;
     background-color: #024CAA;
+    overflow-x: hidden;
 }
 
 .header {
@@ -103,6 +113,7 @@ body{
     border-radius: 10px;
     transition: 0.5s;
     top: 3px;
+    
 }
 .navigation ul li:nth-child(1).active ~ .indicator {
     background: #091057;
@@ -181,7 +192,7 @@ body{
     text-align: center;
     line-height: 55px;
     font-size: 40px;
-    color: black;
+    color: #FFAA50;
     cursor: pointer;
 }
 
