@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #0c67ae;
+    background-color: #B7B7B7;
+}
+
+#title {
+    height: 150px;
+    width: 400px;
+}
+
+#board {
+    width: 360px;
+    height: 360px;
+    background-color: lightblue;
+    border: 10px solid 003049;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blank {
+    background-color: #f0f0f0; /* Light gray background for the blank tile */
+    border: 1px solid #ccc; /* Add a border to visually distinguish it */
+    opacity: 0.5; /* Optional: make the blank tile slightly transparent */
+}
+#board img {
+    width: 118px;
+    height: 118px;
+    border: 1px solid black;
+}
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center the buttons */
+}
+
+.nav-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #003049; /* Match your existing theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #6DD7B2; /* Darker shade on hover */
+}
